@@ -29,11 +29,10 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-
 ALLOWED_HOSTS = [
-    'jasurmavlonov.uz',
-    'www.jasurmavlonov.uz',
-    'web-production-ee019.up.railway.app/'
+    "jasurmavlonov.uz",
+    "www.jasurmavlonov.uz",
+    "web-production-ee019.up.railway.app",
 ]
 
 
@@ -194,4 +193,10 @@ CSRF_TRUSTED_ORIGINS = [
     "https://web-production-ee019.up.railway.app",
 ]
 
-SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# ⚠️ Bu joyni vaqtincha o‘chir (redirect loopni to‘xtatish uchun)
+SECURE_SSL_REDIRECT = False
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
