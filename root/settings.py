@@ -33,7 +33,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'jasurmavlonov.uz',
     'www.jasurmavlonov.uz',
-    'https://web-production-ee019.up.railway.app/'
+    'web-production-ee019.up.railway.app/'
 ]
 
 
@@ -184,3 +184,14 @@ WHITENOISE_EXTRA_PATHS = [
     # Bu MEDIA_ROOT ga teng bo'lishi kerak.
     os.path.join(BASE_DIR, 'media'), 
 ]
+
+
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://jasurmavlonov.uz",
+    "https://www.jasurmavlonov.uz",
+    "https://web-production-ee019.up.railway.app",
+]
+
+SECURE_SSL_REDIRECT = True
