@@ -29,7 +29,12 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = [
+    'jasurmavlonov.uz',
+    'www.jasurmavlonov.uz',
+    'https://web-production-ee019.up.railway.app/'
+]
 
 
 
