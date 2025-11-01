@@ -1,0 +1,44 @@
+# Byte-compiled / optimized / compressed files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.egg-info/
+.Python
+build/
+dist/
+
+# Virtual environment
+venv/
+env/
+.env/
+my_venv/
+
+# Database files
+*.sqlite3
+db.sqlite3
+
+# Media and Static files (if not served from a separate CDN)
+media/
+static/
+
+# IDE-specific files
+.idea/
+.vscode/
+*.swp
+*.bak
+*.swo
+
+# Sensitive information (e.g., local settings, secret keys)
+local_settings.py
+.env
+
+# Uploaded files
+uploads/
+
+# Logs
+*.log
+
+
+
+

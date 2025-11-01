@@ -1,0 +1,532 @@
+{%load static%}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Jasur Mavlonov | Backend Developer </title>
+  <link rel="icon" type="image/jpeg" href="{% static 'blog/images/mj.jpeg' %}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'blog/css/style.css'%}" type="text/css">
+  
+  <link rel="stylesheet" class="alternate-style" title="pink" href="{% static 'blog/css/skins/pink.css' %}" type="text/css">
+  <link rel="stylesheet" class="alternate-style" title="blue" href="{% static 'blog/css/skins/blue.css' %}" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="green" href="{% static 'blog/css/skins/green.css' %}" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="orange" href="{% static 'blog/css/skins/orange.css' %}" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="yellow" href="{% static 'blog/css/skins/yellow.css' %}" type="text/css" disabled>
+  <link rel="stylesheet" href="{% static 'blog/css/styleSwitcher.css' %}" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* ... (CSS Stillari o'zgarishsiz qoladi) ... */
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .portfolio {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+      flex-grow: 1;
+    }
+
+    .card h3 {
+      margin: 0;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: black !important;
+    }
+
+    .tech {
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #555;
+      color: #fff;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 5px;
+      margin-right: 5px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+    
+    /* LIGHT va DARK MODE uchun Til tanlash CSS stillarini shu yerga qo'shing */
+  </style>
+</head>
+
+<body>
+
+  <div class="preloader">
+    <div class="loader">
+
+    </div>
+  </div>
+  <div class="main-container">
+    
+    <div class="aside">
+      <div class="nav-toggler">
+        <span></span>
+      </div>
+      <div class="aside-inner">
+        <div class="logo">
+          <a href="{% url 'blog:index' %}">Jasur</a>
+        </div>
+        <ul class="nav">
+          <li><a href="#home" class="active"><i class="fa fa-home"></i> {% translate "Home" %}</a></li>
+          <li><a href="#about"><i class="fa fa-user"></i> {% translate "About" %}</a></li>
+          <li><a href="#skills"><i class="fa fa-list"></i> {% translate "Technical Skills" %}</a></li>
+          <li><a href="#portfolio"><i class="fa fa-briefcase"></i> {% translate "Portfolio" %}</a></li>
+          <li><a href="#blog"><i class="fa fa-envelope"></i> {% translate "Blog" %}</a></li>
+          <li><a href="#contact"><i class="fa fa-comments"></i> {% translate "Contact" %}</a></li>
+        </ul>
+        <div class="copyright-text">
+          &copy; 2020 {% translate "The WebShala Template" %}
+        </div>
+      </div>
+    </div>
+    <div class="main-content">
+
+      <section class="home section active" id="home">
+        <div class="container">
+          <div class="intro">
+            <img src="{% static 'blog/images/jasur.jpeg' %}" alt="profile" class="shadow-dark">
+            <h1>Jasur Mavlonov</h1>
+            <p>
+                {% translate "Python Backend Engineer | Expert in Django & FastAPI" %}<br>
+                {% translate "Building Scalable APIs and Database-Driven Applications" %}
+            </p>
+            
+            <div class="social-links">
+              <a href="https://t.me/jasur_mavlonov02" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=100072705771429" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.instagram.com/jasur_mavlonov02/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/jasur-mavlonov-651697256/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <br>
+            <span class="iTyped"></span>
+          </div>
+        </div>
+      </section>
+      <section class="about section" id="about">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>{% translate "About Me" %}</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="about-content padd-15">
+              <div class="row">
+                <div class="about-text padd-15">
+                  <h3>{% translate "I'm Jasur Mavlonov." %}<span>{% translate "Web Developer" %}</span></h3>
+                  <p>
+                    {% translate "I am a Python Backend Developer with over 2 years of experience designing and building scalable backend systems. I specialize in developing RESTful APIs using Django and FastAPI, implementing efficient database structures and optimizations, and working with Celery and Redis for background task processing. My expertise also includes building microservice architectures and integrating various backend components to deliver high-performance, maintainable applications." %}
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="experience padd-15">
+                  <h3 class="title">{% translate "Experience" %}</h3>
+                  <div class="row">
+                    <div class="timeline-box padd-15">
+                      <div class="timeline shadow-dark">
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h6 class="timeline-date"><i class="fa fa-calendar"></i> 2023 - 2024</h6>
+                          <h4 class="timeline-title">Texnomart</h4>
+                          <h5 class="timeline-title" style="color:green;">{% translate "Backend Developer" %}</h5>
+                          <p class="timeline-text">{% translate "I have developed a dashboard page that consolidates all microservices into a single interface. It includes a login system, search functionality, and a customized version of the default Django admin templates." %}</p>
+                        </div>
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h6 class="timeline-date"><i class="fa fa-calendar"></i> 2024 - 2025</h6>
+                          <h4 class="timeline-title">Najot Ta'lim</h4>
+                          <h5 class="timeline-title" style="color:green;">{% translate "Python Mentor" %}</h5>
+
+                          <p class="timeline-text">{% translate "Developed a full-featured e-commerce platform with product listings, shopping cart, order management, and secure payment integration. Implemented using Django REST Framework and optimized for performance." %}</p>
+                        </div>
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h6 class="timeline-date"><i class="fa fa-calendar"></i> 2025 - Present</h6>
+                          <h4 class="timeline-title">Najot Ta'lim</h4>
+                          <h5 class="timeline-title" style="color:green;">{% translate "Python Mentor" %}</h5>
+
+                          <p class="timeline-text">{% translate "Built an online shop with product catalog, cart system, order tracking, and user authentication. Developed using Django and integrated with a responsive front-end for a smooth shopping experience." %}</p>
+                        </div> 
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="education padd-15">
+                  <h3 class="title">{% translate "Education" %}</h3>
+                  <div class="row">
+                    <div class="timeline-box padd-15">
+                      <div class="timeline shadow-dark">
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h6 class="timeline-date"><i class="fa fa-calendar"></i>2020-2025</h6>
+                          <h4 class="timeline-title">Tashkent University of Information Technology</h4>
+                          <p class="timeline-text">{% translate "Bachelor’s degree in Information Security, focusing on network security, cryptography, and secure software development." %}</p>
+                        </div>
+                        
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="service section" id="skills">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>{% translate "Technical Skills" %}</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon"><i class="fa fa-code"></i></div>
+                <h4>{% translate "Programming Languages" %}</h4>
+                <p>Python , C++ , Php</p>
+              </div>
+            </div>
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon"><i class="fa fa-database"></i></div>
+                <h4>{% translate "Databases" %}</h4>
+                <p>Postgresql , Sqlite, MySQL</p>
+              </div>
+            </div>
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon">
+                  <i class="fa fa-sitemap"></i>
+                </div>
+                <h4>{% translate "Frameworks" %}</h4>
+                <p>Django,FastAPI</p>
+              </div>
+            </div>
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon">
+                  <i class="fa fa-tasks"></i>
+                </div>
+                <h4>{% translate "Task Queues & Messaging" %}</h4>
+                <p>Celery , RabbitMQ</p>
+              </div>
+            </div>
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon"><i class="fa fa-cogs"></i></div>
+                <h4>{% translate "DevOps & Deployment" %}</h4>
+                <p>Docker, Github Actions , CI / CD, AWS (ec2)</p>
+              </div>
+            </div>
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon"><i class="fa fa-code-fork"></i></div>
+                <h4>{% translate "Version Control" %}</h4>
+                <p>Git, Pull requests, Conflict Resolution</p>
+              </div>
+            </div>
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon">
+                  <i class="fa fa-users"></i>
+                </div>
+                <h4>{% translate "Soft Skills" %}</h4>
+                <p>
+                  {% translate "Team Collaboration" %}<br>
+                  {% translate "Debugging & Troubleshooting" %}<br>
+                  {% translate "DevOps Collaboration" %}
+                </p>
+              </div>
+            </div>
+            </div>
+        </div>
+      </section>
+      <section class="portfolio section" id="portfolio">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>{% translate "Portfolio" %}</h2>
+            </div>
+          </div>
+         
+          <div class="project">
+            {% for portfolio in portfolios %}
+              <div class="card">
+                <img src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}">
+                <div class="card-content">
+                  <h3>{{ portfolio.title }}</h3>
+                  <p class="subtitle"><i>{% translate "Web Development" %}</i></p>
+                  <p class="description">{{ portfolio.description }}</p>
+                  <div class="tech">
+                    <span class="tech-label">{% translate "Tech:" %}</span>
+                    {% for tech in portfolio.technologies.all %}
+                      <span class="badge">{{ tech.name }}</span>
+                    {% endfor %}
+                  </div>
+                  <a href="{{portfolio.link}}" target="_blank" class="btn">{% translate "View Project" %}</a>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          
+        </div>
+      </section>
+      <section class="blog section" id="blog">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>{% translate "Latest Blog" %}</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="blog-container">
+                <div class="blog-item">
+                  <div class="blog-item-inner">
+                    <div class="blog-img">
+                      <div class="blog-date">12 May 2024</div>
+                    </div>
+                    <div class="blog-info">
+                      <h4 class="blog-title">
+                        {% translate "Building a RESTful API with Django Rest Framework" %}
+                        <a href="https://www.django-rest-framework.org/tutorial/quickstart/" target="_blank" class="external-link">
+                          <i class="fa-solid fa-up-right-from-square"></i>
+                        </a>
+                      </h4>
+                      <p class="blog-description">
+                        {% translate "Creating a RESTful API using Django Rest Framework is the foundation of modern backend projects. In this post, we’ll learn how to work with authentication, serializers, and viewsets." %}
+                      </p>
+                      <p class="blog-tags">{% translate "Tags:" %} <a href="#">Python</a>, <a href="#">Django</a>, <a href="#">API</a></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="blog-item">
+                  <div class="blog-item-inner">
+                    <div class="blog-img">
+                      <div class="blog-date">28 Aug 2024</div>
+                    </div>
+                    <div class="blog-info">
+                      <h4 class="blog-title">
+                        {% translate "Deploying Django App with Docker and Nginx" %}
+                        <a href="https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/" target="_blank" class="external-link">
+                          <i class="fa-solid fa-up-right-from-square"></i>
+                        </a>
+                      </h4>
+                      <p class="blog-description">
+                        {% translate "By deploying your Django project inside a Docker container, you can create a stable and flexible deployment system. In this article, we’ll explore a real-world configuration using Nginx, Gunicorn, and Docker Compose." %}
+                      </p>
+                      <p class="blog-tags">{% translate "Tags:" %} <a href="#">Docker</a>, <a href="#">Nginx</a>, <a href="#">DevOps</a></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="blog-item">
+                  <div class="blog-item-inner">
+                    <div class="blog-img">
+                      <div class="blog-date">28 Aug 2024</div>
+                    </div>
+                    <div class="blog-info">
+                      <h4 class="blog-title">
+                        {% translate "Optimizing Python Code for Better Performance" %}
+                        <a href="https://realpython.com/python-performance/" target="_blank" class="external-link">
+                          <i class="fa-solid fa-up-right-from-square"></i>
+                        </a>
+                      </h4>
+                      <p class="blog-description">
+                        {% translate "When working with large amounts of data, your Python application may run slowly. In this article, we’ll explore how to improve backend performance using profiling, caching, and asynchronous technologies." %}
+                      </p>
+                      <p class="blog-tags">{% translate "Tags:" %} <a href="#">Python</a>, <a href="#">Performance</a>, <a href="#">Backend</a></p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+         
+          </div>
+        </div>
+      </section>
+      <section class="contact section" id="contact">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>{% translate "Contact Me" %}</h2>
+            </div>
+          </div>
+          <div class="row">
+          
+            <div class="contact-info-item padd-15">
+              <div class="icon">
+                <i class="fa fa-map-marker"></i>
+                <h4>{% translate "Location" %}</h4>
+                <p>Tashkent,Uzbekistan</p>
+              </div>
+            </div>
+            
+            <div class="contact-info-item padd-15">
+              <div class="icon">
+                <i class="fa fa-envelope"></i>
+                <h4>{% translate "Email" %}</h4>
+                <p>jasurmavlonov24@gmail.com</p>
+              </div>
+            </div>
+            </div>
+
+          <div class="row">
+            <form method="post" action="{% url 'blog:contact_view' %}" class="contact-form padd-15">
+              {% csrf_token %}
+              <div class="row">
+                <div class="form-item col-6 padd-15">
+                  <div class="form-group">
+                    <input type="text" name="name" class="form-control" placeholder="{% translate "Name" %}*">
+                  </div>
+                </div>
+                <div class="form-item col-6 padd-15">
+                  <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="{% translate "Email" %}*">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-item col-12 padd-15">
+                  <div class="form-group">
+                    <textarea class="form-control" name="message" placeholder="{% translate "Your Message..." %}"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12 padd-15">
+                  <button type="submit" class="btn">{% translate "Send Message" %}</button>
+                </div>
+              </div>
+            </form>
+
+            <p id="resultMessage" style="margin-top:10px; font-weight:bold;"></p>
+          </div>
+          </div>
+      </section>
+      </div>
+    </div>
+  <div class="lightbox">
+    <div class="lightbox-content">
+      <div class="lightbox-close">&times;</div>
+      <img src="" alt="" onclick="nextItem()" class="lightbox-img">
+      <div class="lightbox-caption">
+        <div class="caption-text"></div>
+        <div class="caption-counter"></div>
+      </div>
+    </div>
+    <div class="lightbox-controls">
+      <div class="prev-item" onclick="prevItem()"><i class="fa fa-angle-left"></i></div>
+      <div class="next-item" onclick="nextItem()"><i class="fa fa-angle-right"></i></div>
+    </div>
+  </div>
+  <div class="language-switcher-wrapper">
+    <div class="language-selector-container">
+        <form action="{% url 'set_language' %}" method="post" id="language-form">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ request.path}}">
+            <span class="globe-icon"><i class="fa fa-globe"></i></span> 
+            <select id="language-select" name="language">
+                {% get_current_language as CURRENT_LANGUAGE %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                    <option value="{{ language.code }}" {% if language.code == CURRENT_LANGUAGE %}selected{% endif %}>
+                        {{ language.code|upper }}
+                    </option>
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+  </div>
+
+  
+
+  <div class="style-switcher">
+    <div class="toggle-style-switcher">
+      <i class="fa fa-cog fa-spin"></i>
+    </div>
+
+    
+
+    <h5>{% translate "Style Switcher" %}</h5>
+    <ul>
+      <li><a href="javascript:void(0);" title="pink" style="background-color: #ec1839;" onclick="setActiveStyle('pink')"></a></li>
+      <li><a href="javascript:void(0);" title="blue" style="background-color: #2196f3;" onclick="setActiveStyle('blue')"></a></li>
+      <li><a href="javascript:void(0);" title="orange" style="background-color: #fa5b0f;" onclick="setActiveStyle('orange')"></a></li>
+      <li><a href="javascript:void(0);" title="yellow" style="background-color: #ffb400;" onclick="setActiveStyle('yellow')"></a></li>
+      <li><a href="javascript:void(0);" title="green" style="background-color: #72b626;" onclick="setActiveStyle('green')"></a></li>
+    </ul>
+    <h5>{% translate "Body Skin" %}</h5>
+    <label>
+      <input type="radio" class="body-skin" name="body-skin" value="light" checked="true"> {% translate "Light" %}
+    </label>
+    <label>
+      <input type="radio" class="body-skin" name="body-skin" value="dark"> {% translate "Dark" %}
+    </label>
+    
+    
+  </div>
+  <script src="{% static 'blog/js/ityped.min.js' %}"></script>
+  <script src="{% static 'blog/js/script.js' %}"></script>
+  <script src="{% static 'blog/js/styleSwitcher.js' %}"></script>
+  <script src="{% static 'blog/js/mail.js' %}"></script>
+
+  
+  </body>
+
+</html>
