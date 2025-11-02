@@ -35,7 +35,6 @@ ALLOWED_HOSTS = [
     "jasurmavlonov.uz",
     "www.jasurmavlonov.uz",
     "web-production-ee019.up.railway.app",
-    '127.0.0.1'
 ]
 
 
