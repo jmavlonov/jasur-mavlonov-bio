@@ -97,8 +97,19 @@ WSGI_APPLICATION = 'root.wsgi.application'
 #     'default': dj_database_url.config(default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}")
 # }
 
+IS_LOCAL = os.environ.get('IS_LOCAL', 'False') == 'True'
 
-DATABASES = {
+if IS_LOCAL:
+    # ➤ Lokalda SQLite ishlaydi
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    # ➤ Productionda PostgreSQL ishlaydi
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',  
         'NAME': os.getenv('DB_NAME'),  
@@ -109,23 +120,7 @@ DATABASES = {
     }
 }
 
-# if DATABASE_URL and DATABASE_URL.startswith("postgres"):
-#     # Railway yoki boshqa Postgres muhit
-#     DATABASES = {
-#         "default": dj_database_url.config(
-#             default=DATABASE_URL,
-#             conn_max_age=600,
-#             ssl_require=True  # Railway uchun kerak
-#         )
-#     }
-# else:
-#     # Lokal ish uchun SQLite fallback
-#     DATABASES = {
-#         "default": {
-#             "ENGINE": "django.db.backends.sqlite3",
-#             "NAME": BASE_DIR / "db.sqlite3",
-#         }
-#     }
+
 
 
 # Password validation
