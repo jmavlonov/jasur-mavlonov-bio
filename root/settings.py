@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
+import dj_database_url
+
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 from dotenv import load_dotenv
@@ -27,12 +29,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = [
     "jasurmavlonov.uz",
     "www.jasurmavlonov.uz",
     "web-production-ee019.up.railway.app",
+    '127.0.0.1'
 ]
 
 
@@ -87,13 +90,16 @@ WSGI_APPLICATION = 'root.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
+DATABASES = {
+    "default": dj_database_url.parse(os.getenv("DATABASE_URL", "sqlite:///db.sqlite3"))
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -179,10 +185,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-WHITENOISE_EXTRA_PATHS = [
-    # Bu MEDIA_ROOT ga teng bo'lishi kerak.
-    os.path.join(BASE_DIR, 'media'), 
-]
+
 
 
 
