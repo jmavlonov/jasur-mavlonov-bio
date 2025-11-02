@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'root.wsgi.application'
 #     'default': dj_database_url.config(default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}")
 # }
 
-IS_LOCAL = os.environ.get('IS_LOCAL', 'False') == 'True'
+IS_LOCAL = os.getenv.get('IS_LOCAL', 'False') == 'True'
 
 if IS_LOCAL:
     # ➤ Lokalda SQLite ishlaydi
