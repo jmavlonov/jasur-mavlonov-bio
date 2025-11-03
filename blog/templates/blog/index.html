@@ -304,7 +304,10 @@
           <div class="project">
             {% for portfolio in portfolios %}
               <div class="card">
-                <img src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}">
+                <div class="profile-container">
+                  <img src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}" class="profile-img">
+                </div>
+                {% comment %} <img src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}"> {% endcomment %}
                 <div class="card-content">
                   <h3>{{ portfolio.title }}</h3>
                   <p class="subtitle"><i>{% translate "Web Development" %}</i></p>

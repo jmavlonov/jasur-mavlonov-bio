@@ -1656,3 +1656,24 @@ body.dark #language-select:hover {
 
 /* ssssss */
 
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6fb; /* yumshoq fon */
+    padding: 40px 0;
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;          /* yumaloq shakl */
+    object-fit: cover;           /* cho‘zmasdan, markazdan qirqadi */
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border: 5px solid #fff;      /* chiroyli oq halqa */
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);      /* hover effekti */
+}
