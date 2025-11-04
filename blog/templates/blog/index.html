@@ -305,7 +305,7 @@
             {% for portfolio in portfolios %}
               <div class="card">
                 <div class="profile-container">
-                  <img src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}" class="profile-img">
+                  <img src="{{ portfolio.image_url|default:portfolio.image.url }}" alt="{{ portfolio.title }}" class="profile-img">
                 </div>
                 {% comment %} <img src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}"> {% endcomment %}
                 <div class="card-content">

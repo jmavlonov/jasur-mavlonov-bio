@@ -19,7 +19,7 @@ my_venv/
 db.sqlite3
 
 # Media and Static files (if not served from a separate CDN)
-media/
+
 static/
 
 # IDE-specific files

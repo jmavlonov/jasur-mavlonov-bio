@@ -1,6 +1,5 @@
 from django.db import models
 from parler.models import TranslatableModel, TranslatedFields
-
 # Create your models here.
 
 
@@ -29,6 +28,8 @@ class Portfolio(TranslatableModel):
 
     class Meta:
         verbose_name_plural = "Portfolio"
+      
+
 
     def __str__(self):
         return self.title
