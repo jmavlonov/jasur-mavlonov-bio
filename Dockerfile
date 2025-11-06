@@ -10,8 +10,7 @@ WORKDIR /app
 
 # 4. Install dependencies
 COPY requirements.txt .
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # 5. Copy project files
 COPY . .
@@ -25,8 +24,8 @@ RUN apt-get update && apt-get install -y nginx && rm -rf /var/lib/apt/lists/*
 # 8. Copy NGINX config
 COPY nginx/default.conf /etc/nginx/sites-available/default
 
-# 9. Expose port
+# 9. Expose port (Railway uchun)
 EXPOSE 8000
 
 # 10. Start Gunicorn + NGINX
-CMD service nginx start && gunicorn root.wsgi:application --bind 0.0.0.0:8000
+CMD service nginx start && gunicorn root.wsgi:application --bind 0.0.0.0:8080

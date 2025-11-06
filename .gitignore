@@ -22,7 +22,6 @@ db.sqlite3
 
 static/
 
-media/
 
 # IDE-specific files
 .idea/
